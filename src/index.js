@@ -46,12 +46,14 @@ function onCountryInput() {
     } else {
       countryList.insertAdjacentHTML('beforeend', markupCountryList(country));
     }
-  });
+  })
 
   //   Ловим ошибку при вводе
-  // .catch(wrongNameAlert);
+  .catch(ifWrongNameAlert);
 }
-
+function ifWrongNameAlert() {
+  Notiflix.Notify.failure('Oops, there is no country with that name');
+}
 // Функция для вывода алерта, если больше 10 совпадений
 
 function ifTooManyMatchesAlert() {
